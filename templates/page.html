@@ -1,0 +1,43 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="description" content="peterkins.io">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="author" content="Stephen Peterkins">
+        <link rel="stylesheet" href="/style.css">
+        <!-- <script rel="prefetch" src="https://kit.fontawesome.com/9a8eb5d299.js" crossorigin="anonymous"></script> -->
+    </head>
+    <body>
+      <div class="header han-purple">
+          <div class="header-logo">
+            <h1>
+              <a href="/">
+               peterkins.dev
+             </a>
+           </h1>
+          </div>
+          <div class="header-right">
+              <a href="/about">about</a>
+              <a href="/blog">blog</a>
+          </div>
+      </div>
+        <div class="main">
+          <div class="blog-content">
+            <h1 class="blog-title">{{ page.title }}</h1>
+            <h2 class="blog-timstamp">{{ page.date }}</h2>
+            <hr class="blog-divider">
+            <div class="blog-body">
+              {{ page.content | safe }}
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+            <p>©<span id="footer-year"></span> — Stephen Peterkins</p>
+        </div>
+        <script>
+            document.getElementById('footer-year').innerHTML = new Date().getFullYear();
+        </script>
+    </body>
+</html>
