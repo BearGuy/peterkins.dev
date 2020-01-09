@@ -35,7 +35,7 @@
               {% for post in section.pages %}
                 <div class="blog-box">
                   <h2 class="blog-box-title">{{ post.title }}</h2>
-                  <h4 class="blog-box-title">{{ post.date }}</h4>
+                  <h4 class="blog-box-date">{{ post.date }}</h4>
                   <p class="blog-box-description">{{ post.description | safe }}</p>
                   <a href="{{ post.path }}">
                     <button class="blog-box-button">read</button>
