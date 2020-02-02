@@ -819,4 +819,4 @@ In this tutorial, we have create a QR Code scanner with WebAssembly and the late
 
 We've showcased how to one can use WebAssembly for the most performance critical portions of our application, and how bundlers are not a requirement for modern web development.
 
-{ Add about the author section here }
+GitHub repo of the tutorial: https://github.com/BearGuy/wasm-qrscanner
