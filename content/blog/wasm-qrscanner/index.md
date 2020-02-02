@@ -4,10 +4,10 @@ title = "Building a Web QR Scanner with Snowpack and WebAssembly"
 description = "With the capabilities of the modern web, there are a bunch of applications that can be built that were traditionally only possible within native apps. Today, we're going to build a basic QR Scanning app using novel web standards and practices, including ES Modules and WebAssembly."
 +++
 
-With the capabilities of the modern web, there are a bunch of applications that can be built that were traditionally only possible within native apps. Today, we're gonna build a basic QR Scanning app using novel web standards and practices, including ES Modules and WebAssembly.
+With the capabilities of the modern web, there are tons of applications that can be built that were traditionally only possible within native apps. Today, we're gonna build a basic QR Scanning app using novel web standards and practices, including ES Modules and WebAssembly.
 
 # Snowpack and App Structure
-Firs thing we'll want to do is create our app directory structure. In order to utilize the fantastic tooling of modern Javascript, we normally have to use a bundler like [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/) in order to get our CommonJS dependencies to compile on the browser.
+First thing we'll want to do is create our app directory structure. In order to utilize the fantastic tooling of modern Javascript, we normally have to use a bundler like [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/) in order to get our CommonJS dependencies to compile on the browser.
 
 However, nowadays there's a new project called [pika.dev](https://pika.dev) that's helping out Javascript developers utilize ES Modules for external dependencies. We're gonna use a program called [Snowpack](https://snowpack.dev) to help us out. Snowpack will help us convert our dependencies in our `node_modules` directory into a `web_modules` directory. These new `web_modules` dependencies can be directly fetched by our browser and run without any bundling required. Super cool.
 
@@ -160,13 +160,13 @@ $ npm start
 ```
 to take a gander at what it looks like!
 
-That's completes our initial project structure setup! Next, we'll want to add the our WebAssembly files to do the heavy lifting of our app.
+That completes our initial project structure setup! Next, we'll want to add the our WebAssembly files to do the heavy lifting of our app.
 
-# Web Assembly and QUIC files
+# Web Assembly and QUIRC files
 
 WebAssembly is a new file format that can run uber performant code in the browser. We'll want to be using `.wasm` files for image recognition and QR decoding process. The first thing we want to do is get our wasm files from a fork of [Daniel Beer's QR decoder library](https://github.com/dlbeer/quirc).
 
-To save some time, we'll be pulling the precompiled files from another repo [here](https://github.com/mdchaney/quirc.wasm). If you want to go through the process of compiling them yourself using EMScripten, check out Joshua Koo's repo [here](https://github.com/zz85/quirc.js) where they did the legwork of getting the library to work with WebAssembly [here](https://github.com/zz85/quirc.js)), and also check out Emcscripten's documentation to [install and get started using it](https://emscripten.org/docs/getting_started/downloads.html).
+To save some time, we'll be pulling the pre-compiled files from another repo [here](https://github.com/mdchaney/quirc.wasm). If you want to go through the process of compiling them yourself using Emscripten, check out Joshua Koo's repo [here](https://github.com/zz85/quirc.js) where they did the legwork of getting the library to work with WebAssembly [here](https://github.com/zz85/quirc.js)), and also check out Emcscripten's documentation to [install and get started using it](https://emscripten.org/docs/getting_started/downloads.html).
 
 The files we're most interested in are these located in the `wasm` directory.
 Here are links to download the files we want:
@@ -179,7 +179,7 @@ src/lib/quirc/quirc.js
 src/lib/quirc/quirc.wasm
 ```
 
-We'll create a `quirc` directory in a new `lib` directory located in `src`.  It's good practice to seperate external libraries and our app logic.
+We'll create a `quirc` directory in a new `lib` directory located in `src`.  It's good practice to separate external libraries and our app logic.
 
 Our `quirc.js` file will be calling our `quirc.wasm` to do most of the heavy lifting of qr decoding. However, we'll ned a way to instantiate and call our `quirc.js` module and have it function with the rest of our existing app logic. The easiest way to achieve this will be running our `quirc` logic as a Javascript Worker.
 
@@ -325,7 +325,7 @@ class QRScanner extends Component<QRScannerProps, QRScannerState> {
 export default QRScanner
 ```
 
-Cool, we have all of the pieces in place. All of our logic will exist in our `QRScanner` component. We'll first add the most important part of a QRSCanner,access to the camera! We want to be retrieving whatever camera acceses our device has, and use it to get image data to our `quirc` module will process and decode.
+Cool, we have all of the pieces in place. All of our logic will exist in our `QRScanner` component. We'll first add the most important part of a QRSCanner,access to the camera! We want to be retrieving whatever camera accesses our device has, and use it to get image data to our `quirc` module will process and decode.
 
 Modern web standards allow us to do this quite easily with APIs provided by [WebRTC](https://webrtc.org/). We'll start first by adding our HTML `video` element to our QRScanner component.
 
@@ -405,7 +405,7 @@ OK, so we have a `video` element which is full screen in our browser. You may ha
 
 We won't be able to see any output yet until we enable WebRTC to bind a video stream to our `video` element. Let's do that next.
 
-In `QRScanner.tsx`, we want to initailize WebRTC video when we mount our component.
+In `QRScanner.tsx`, we want to initialize WebRTC video when we mount our component.
 
 ```tsx
 import { h, createRef, Component } from '/web_modules/preact.js'
@@ -475,7 +475,7 @@ $ npm start
 ```
 and if you've been following along, you should be able to see your beautiful face right there on your screen 😁
 
-Now, it's time for us to add our QUIRC logic. First, we're gonna want to declare a few more attributes in our `QRScanner` component.
+Now, it's time for us to add our quirc logic. First, we're gonna want to declare a few more attributes in our `QRScanner` component.
 
 ```tsx
   // src/components/QRScanner/index.tsx
@@ -520,7 +520,7 @@ Let's break down what we're doing here. First, we're getting our `canvas_context
 
 We're overriding our `decoder` Worker's `onmessage` function to a function called `onDecoderMessage`. `onDecoderMessage` will accept a decoded message passed from the `quirc` module.
 
-We'll also be delaying intializing the scanning function `attemptQRDecode`. This function is pretty self explanatory, we'll be attempting to decode a snapshot of our video stream to detect if there's any QR codes in frame. If there is, it will attempt to succesfully decode it and pass the decoded message to our `onDecoderMessage` function.
+We'll also be delaying initializing the scanning function `attemptQRDecode`. This function is pretty self explanatory, we'll be attempting to decode a snapshot of our video stream to detect if there's any QR codes in frame. If there is, it will attempt to successfully decode it and pass the decoded message to our `onDecoderMessage` function.
 
 Let's create both our `attemptQRDecode` and `onDecoderMessage` functions next.
 
@@ -556,6 +556,10 @@ In `attemptQRDecode`, we're getting the frame data of the video stream and conve
 If the decoder is able to detect and decode a QR code successfully, it will run the `onmessage` function that we've set to run our `onDecoderMessage`. Let's create that logic right now.
 
 ```tsx
+// src/components/QRScanner/index.tsx
+
+// ...
+
 onDecoderMessage(msg: any) {
   if (msg.data != 'done') {
 
@@ -575,7 +579,7 @@ onDecoderMessage(msg: any) {
 }
 ```
 
-In our function, we want to receive our `payload_string` from the `msg`, as this is our decoded message. We also cache the last succesful scan data in `last_scanned_raw` so that the user doesn't get spammed over and over with the their decoded information. We also manually check that we're passed our set `debounce_timeout`. Once these factors have been cleared, we'll show the `qrid` with the built in `alert` function to display the information in the browser.
+In our function, we want to receive our `payload_string` from the `msg`, as this is our decoded message. We also cache the last successful scan data in `last_scanned_raw` so that the user doesn't get spammed over and over with the their decoded information. We also manually check that we're passed our set `debounce_timeout`. Once these factors have been cleared, we'll show the `qrid` with the built in `alert` function to display the information in the browser.
 
 Let's run our code with `npm start` once again to test it out. For testing purposes, I'd recommend using this [online QR code generator](https://the-qrcode-generator.com) to create a QR code on your phone. Running the app, you'll see yourself on your screen using your camera. Pointing our phone screens (with our newly generated QR code on it) at our laptop screens will allow our program to decode it.
 
@@ -589,7 +593,7 @@ While we have a working prototype, it's still lacking a lot of the style that ma
 
 Most QR scanners are going to put a dark filter over the screen except for a square in the middle. This is the target that the user is supposed to line up the QR code with. This sort of styling has a purpose, it's there to provide intuitive knowledge of how to use the scanner for first time users.
 
-We'll want to edit our QRScanner component's `render` function to add the neceessray elements:
+We'll want to edit our QRScanner component's `render` function to add the necessary elements:
 
 ```tsx
 // src/components/QRScanner.index.tsx
@@ -685,7 +689,7 @@ As I've noted previously, all we're doing is passing a "snapshot" image to our d
 
 _* Disclaimer: I have yet to get this to successfully work. If you know what I'm doing wrong here, I would love to receive feedback from you *_
 
-First thing we'll want to add is a button to trigger our image selection. Let's add a button on the bottom right-hand side of the screeen and add some javascript events to it.
+First thing we'll want to add is a button to trigger our image selection. Let's add a button on the bottom right-hand side of the screen and add some javascript events to it.
 
 ```tsx
 // src/components/QRScanner/index.tsx
@@ -768,7 +772,7 @@ A quick preview should show our button on the right hand corner here:
 Now we need to add some events to our new button. We'll want a function to be bound to the `onClick` attribute of our `button`.
 
 ```typescript
-// src/componetns/QRScanner/index.tsx
+// src/components/QRScanner/index.tsx
 
 // ...
 
@@ -820,3 +824,4 @@ In this tutorial, we have create a QR Code scanner with WebAssembly and the late
 We've showcased how to one can use WebAssembly for the most performance critical portions of our application, and how bundlers are not a requirement for modern web development.
 
 GitHub repo of the tutorial: https://github.com/BearGuy/wasm-qrscanner
+Demo: https://gifted-bhaskara-a52e4f.netlify.com
