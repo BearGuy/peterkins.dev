@@ -819,7 +819,7 @@ Our QR code scanner should now be able to decode the QR from our file. Neat!
 
 # Conclusion
 
-In this tutorial, we have create a QR Code scanner with WebAssembly and the latest in modern web technology. As a component, you'll easily be able to export this functionality to any app you'll be creating in the future.
+In this tutorial, we have created a QR Code scanner with WebAssembly and the latest in modern web technology. As a component, you'll easily be able to export this functionality to any app you'll be creating in the future.
 
 We've showcased how to one can use WebAssembly for the most performance critical portions of our application, and how bundlers are not a requirement for modern web development.
 
