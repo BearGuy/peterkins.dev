@@ -58,27 +58,27 @@ You'll see in our `web_modules` directory we now have `preact.js` file that will
     <title>WASM QRScanner</title>
     <meta charset="utf-8">
     <meta name="author" content="Stephen Peterkins">
-		<meta name="viewport" content="width=device-width,initial-scale=1">
-		<meta name="mobile-web-app-capable" content="yes">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <link rel="stylesheet" href="/style.css">
   </head>
-<body>
-  <div id="app"></div>
-  <script type="module" src="/index.js"></script>
-</body>
+  <body>
+    <div id="app"></div>
+    <script type="module" src="/index.js"></script>
+  </body>
 </html>
 ```
 
 Next, we'll create our `src` directory and populate it with `app.js`.
-```javascript
+```tsx
 // src/index.tsx
 
 import { h, render, FunctionalComponent} from '/web_modules/preact.js'
 
 const App: FunctionalComponent = () => (
   <div>
-    <h1>Hello World!</h1>
+    <h1>Hello World</h1>
   </div>
 );
 
@@ -501,7 +501,7 @@ Now, it's time for us to add our QUIRC logic. First, we're gonna want to declare
 
 Next, we'll be using this attributes in our `componentDidMount` function to kickoff the decoder logic using our `Worker`.
 
-```javascript
+```typescript
 async componentDidMount() {
   this.decoder.onmessage = (msg) => { this.onDecoderMessage(msg) };
 
@@ -687,7 +687,7 @@ _* Disclaimer: I have yet to get this to successfully work. If you know what I'm
 
 First thing we'll want to add is a button to trigger our image selection. Let's add a button on the bottom right-hand side of the screeen and add some javascript events to it.
 
-```javascript
+```tsx
 // src/components/QRScanner/index.tsx
 
 // ...
@@ -767,7 +767,7 @@ A quick preview should show our button on the right hand corner here:
 
 Now we need to add some events to our new button. We'll want a function to be bound to the `onClick` attribute of our `button`.
 
-```javascript
+```typescript
 // src/componetns/QRScanner/index.tsx
 
 // ...
