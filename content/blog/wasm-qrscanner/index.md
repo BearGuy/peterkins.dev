@@ -1,7 +1,7 @@
 +++
 date = 2020-01-26
 title = "Building a Web QR Scanner with Snowpack and WebAssembly"
-description = "With the capabilities of the modern web, there are a bunch of applications that can be built that were traditionally only possible within native apps. Today, we're gonna build a basic QR Scanning app using novel web standards and practices, including ES Modules and WebAssembly."
+description = "With the capabilities of the modern web, there are a bunch of applications that can be built that were traditionally only possible within native apps. Today, we're going to build a basic QR Scanning app using novel web standards and practices, including ES Modules and WebAssembly."
 +++
 
 With the capabilities of the modern web, there are a bunch of applications that can be built that were traditionally only possible within native apps. Today, we're gonna build a basic QR Scanning app using novel web standards and practices, including ES Modules and WebAssembly.
@@ -10,6 +10,8 @@ With the capabilities of the modern web, there are a bunch of applications that 
 Firs thing we'll want to do is create our app directory structure. In order to utilize the fantastic tooling of modern Javascript, we normally have to use a bundler like [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/) in order to get our CommonJS dependencies to compile on the browser.
 
 However, nowadays there's a new project called [pika.dev](https://pika.dev) that's helping out Javascript developers utilize ES Modules for external dependencies. We're gonna use a program called [Snowpack](https://snowpack.dev) to help us out. Snowpack will help us convert our dependencies in our `node_modules` directory into a `web_modules` directory. These new `web_modules` dependencies can be directly fetched by our browser and run without any bundling required. Super cool.
+
+We'll assume that you have `npm` and `node` installed. If not, I'd recommend downloading the required software for your operating system [here](https://nodejs.org/en/download/). If this is your first time using `npm`, I'd also recommend reading [this article here](https://nodesource.com/blog/an-absolute-beginners-guide-to-using-npm/) about how to use it and what it's good for.
 
 Let's started by installing Snowpack:
 ```bash
@@ -164,7 +166,7 @@ That's completes our initial project structure setup! Next, we'll want to add th
 
 WebAssembly is a new file format that can run uber performant code in the browser. We'll want to be using `.wasm` files for image recognition and QR decoding process. The first thing we want to do is get our wasm files from a fork of [Daniel Beer's QR decoder library](https://github.com/dlbeer/quirc).
 
-To save some time, we'll be pulling the precompiled files from another repo [here](https://github.com/mdchaney/quirc.wasm). If you want to go through the process of compiling them yourself using EMScripten, check out Joshua Koo's repo here where they did the legwork of getting the library to work with WebAssembly [here](https://github.com/zz85/quirc.js)), and also check out Emcscripten's documentation to [install and get started using it](https://emscripten.org/docs/getting_started/downloads.html).
+To save some time, we'll be pulling the precompiled files from another repo [here](https://github.com/mdchaney/quirc.wasm). If you want to go through the process of compiling them yourself using EMScripten, check out Joshua Koo's repo [here](https://github.com/zz85/quirc.js) where they did the legwork of getting the library to work with WebAssembly [here](https://github.com/zz85/quirc.js)), and also check out Emcscripten's documentation to [install and get started using it](https://emscripten.org/docs/getting_started/downloads.html).
 
 The files we're most interested in are these located in the `wasm` directory.
 Here are links to download the files we want:
@@ -549,7 +551,7 @@ attemptQRDecode() {
 }
 ```
 
-In `attemptQRDecode`, we're getting the frame data of the video stream and converting it into an image using our `canvas_context` attribute. Once we have this imgage saved in our `imgData` variable, we fire it off to our  Worker's `decoder` function to start the processing.
+In `attemptQRDecode`, we're getting the frame data of the video stream and converting it into an image using our `canvas_context` attribute. Once we have this image saved in our `imgData` variable, we fire it off to our  Worker's `decoder` function to start the processing.
 
 If the decoder is able to detect and decode a QR code successfully, it will run the `onmessage` function that we've set to run our `onDecoderMessage`. Let's create that logic right now.
 
