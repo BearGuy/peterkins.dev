@@ -164,9 +164,7 @@ That completes our initial project structure setup! Next, we'll want to add the 
 
 # Web Assembly and QUIRC files
 
-WebAssembly is a new file format that can run uber performant code in the browser. We'll want to be using `.wasm` files for image recognition and QR decoding process. The first thing we want to do is get our wasm files from a fork of [Daniel Beer's QR decoder library](https://github.com/dlbeer/quirc).
-
-To save some time, we'll be pulling the pre-compiled files from another repo [here](https://github.com/mdchaney/quirc.wasm). If you want to go through the process of compiling them yourself using Emscripten, check out Joshua Koo's repo [here](https://github.com/zz85/quirc.js) (where they did the legwork of getting the library to target WebAssembly), and also check out Emcscripten's documentation to [install and get started using it](https://emscripten.org/docs/getting_started/downloads.html).
+WebAssembly is a new file format that can run uber performant code in the browser. We'll want to be using `.wasm` files for image recognition and QR decoding process. The first thing we want to do is get our wasm files from a fork of [Daniel Beer's QR decoder library](https://github.com/dlbeer/quirc). To save some time, we'll be pulling the pre-compiled files from [this repo](https://github.com/mdchaney/quirc.wasm).
 
 The files we're most interested in are these located in the `wasm` directory.
 Here are links to download the files we want:
