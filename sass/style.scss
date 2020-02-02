@@ -55,6 +55,11 @@ pre {
   overflow: auto;
 }
 
+code {
+  color: $p3_blue_color;
+  font-size: 1.1em;
+}
+
 .header {
   display: grid;
   grid-template-columns: 1fr 4fr;
