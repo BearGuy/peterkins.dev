@@ -1,6 +1,6 @@
 +++
 title = "Domain Specific Architectures, Bitcoin, and the Future of Computing"
-description = "A brief post on domain specific architecture and where I see computing going"
+description = "People are quick to criticise that Bitcoin mining is taking up an immense amount of power globally (30 TW/hr). I don't know anyone who would say that this is ideal, however the Bitcoin network is highlighting an important change to how industrial compute is evolving generally in regards to energy consumption."
 date = 2018-11-11
 +++
 
