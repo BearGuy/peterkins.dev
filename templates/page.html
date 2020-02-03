@@ -45,31 +45,51 @@
         <div class="main">
           <div class="blog-content">
             <h1 class="blog-title">{{ page.title }}</h1>
-            <h2 class="blog-timstamp">{{ page.date }}</h2>
+            <h2 class="blog-timstamp">{{page.year}}/{{page.month}}/{{page.day}}</h2>
             <hr class="blog-divider">
             <div class="blog-body">
               {{ page.content | safe }}
+              <hr class="big-blog-divider">
+              <script src="/js/SHA256.js"></script>
+              <div id="disqus_thread"></div>
+              <script>
+                (async () => {
+                  const PAGE_URL = "https://peterkins.dev/{{ page.path }}";
+                  const PAGE_IDENTIFIER = await SHA256("{{page.permalink}}");
+                  var disqus_config = function () {
+                    this.page.url = PAGE_URL;
+                    this.page.identifier = PAGE_IDENTIFIER;
+                  };
+                  (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://peterkins-dev.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                  })();
+                })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
             </div>
           </div>
         </div>
         <div class="footer">
           <div class="footer-inner">
-              <p>©<span id="footer-year"></span> — Stephen Peterkins</p>
-              <div class="footer-icons">
-                  <a href="https://github.com/BearGuy" target="_blank">
-                      <img src="/img/github.svg" height="25" width="25"/>
-                  </a>
-                  <a href="https://www.linkedin.com/in/stephen-peterkins/" target="_blank">
-                      <img src="/img/linkedin.svg" height="25" width="25"/>
-                  </a>
-                  <a href="https://twitter.com/speterkins" target="_blank">
-                      <img src="/img/twitter.svg" height="25" width="25"/>
-                  </a>
-              </div>
+            <p>©<span id="footer-year"></span> | Stephen Peterkins | Powered by <a href="https://getzola.org" target="_blank">Zola</a></p>
+            <div class="footer-icons">
+              <a href="https://github.com/BearGuy" target="_blank">
+                  <img src="/img/github.svg" height="25" width="25"/>
+              </a>
+              <a href="https://www.linkedin.com/in/stephen-peterkins/" target="_blank">
+                  <img src="/img/linkedin.svg" height="25" width="25"/>
+              </a>
+              <a href="https://twitter.com/speterkins" target="_blank">
+                  <img src="/img/twitter.svg" height="25" width="25"/>
+              </a>
+            </div>
           </div>
-      </div>
-        <script>
-            document.getElementById('footer-year').innerHTML = new Date().getFullYear();
-        </script>
+        </div>
+      <script>
+          document.getElementById('footer-year').innerHTML = new Date().getFullYear();
+      </script>
     </body>
 </html>

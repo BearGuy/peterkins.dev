@@ -16,6 +16,7 @@ $p3_purple_color: #FF206E;
 $p3_yellow_color: #CEFF1A;
 $p3_blue_color: #41EAD4;
 $p3_white_color: #FFFEFF;
+$p3_off_white_color: #FFFEFF;
 $p3_backgroundcolor: #0C0F0A;
 $p3_background_main_color: #1d1d1d;
 
@@ -47,7 +48,7 @@ h1, h2, h3, h4 {
 }
 
 p {
-  color: $p3_white_color;
+  color: $p3_off_white_color;
 }
 
 pre {
@@ -117,15 +118,20 @@ code {
 .footer {
   display: grid;
   height: 5em;
+  padding-bottom: 1em;
   background: $p3_backgroundcolor;
 }
 
 .footer-inner {
-  display: flex;
+  display: grid;
   margin: auto;
 
   p {
     padding: 0 10px;
+
+    a {
+      color: $p1_pink_color;
+    }
   }
 }
 
@@ -241,7 +247,7 @@ code {
 // .blog-box-description{}
 
 .blog-box-button{
-  background: #FF206E;
+  background: $p1_pink_color;
   color: black;
   font-size: 1em;
   padding: 5px;
@@ -286,7 +292,7 @@ code {
 
 .blog-title {
   font-size: 2.5em;
-  margin: 1em 0;
+  margin: 1em 0 0.66em !important;
   font-family: "Helvetica Neue";
 }
 
@@ -296,8 +302,13 @@ code {
 }
 
 .blog-divider {
-  border: 2px solid $p1_pink_color;
+  border: 1px solid $p1_pink_color;
   margin-bottom: 2em;
+}
+
+.big-blog-divider {
+  border: 1px solid $p1_pink_color;
+  margin: 3em 0 2em;
 }
 
 .blog-body {
