@@ -118,8 +118,25 @@ code {
   display: grid;
   height: 5em;
   background: $p3_backgroundcolor;
+}
+
+.footer-inner {
+  display: flex;
+  margin: auto;
+
   p {
-    margin: auto;
+    padding: 0 10px;
+  }
+}
+
+.footer-icons {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  grid-gap: 7px;
+
+  a {
+    padding: 0 10px;
   }
 }
 
