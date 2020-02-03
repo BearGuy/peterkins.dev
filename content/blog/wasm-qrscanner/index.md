@@ -6,7 +6,7 @@ description = "With the capabilities of the modern web, there are a bunch of app
 
 With the capabilities of the modern web, there are tons of applications that can be built that were traditionally only possible within native apps. Today, we're gonna build a basic QR Scanning app using novel web standards and practices, including ES Modules and WebAssembly.
 
-# Snowpack and App Structure
+## Snowpack and App Structure
 First thing we'll want to do is create our app directory structure. In order to utilize the fantastic tooling of modern Javascript, we normally have to use a bundler like [Webpack](https://webpack.js.org/) or [Rollup](https://rollupjs.org/) in order to get our CommonJS dependencies to compile on the browser.
 
 However, nowadays there's a new project called [pika.dev](https://pika.dev) that's helping out Javascript developers utilize ES Modules for external dependencies. We're gonna use a program called [Snowpack](https://snowpack.dev) to help us out. Snowpack will help us convert our dependencies in our `node_modules` directory into a `web_modules` directory. These new `web_modules` dependencies can be directly fetched by our browser and run without any bundling required. Super cool.
@@ -162,7 +162,7 @@ to take a gander at what it looks like!
 
 That completes our initial project structure setup! Next, we'll want to add the our WebAssembly files to do the heavy lifting of our app.
 
-# Web Assembly and QUIRC files
+## Web Assembly and QUIRC files
 
 WebAssembly is a new file format that can run uber performant code in the browser. We'll want to be using `.wasm` files for image recognition and QR decoding process. The first thing we want to do is get our wasm files from a fork of [Daniel Beer's QR decoder library](https://github.com/dlbeer/quirc). To save some time, we'll be pulling the pre-compiled files from [this repo](https://github.com/mdchaney/quirc.wasm).
 
@@ -260,7 +260,7 @@ We'll also need to add to our `copy` script in package.json so that we're copyin
 
 Great! We're ready to add our view logic to our QR Scanner. Let's create start to flesh out our app and put our WebAssembly module to good use.
 
-# Preact and WebRTC Video Streams
+## Preact and WebRTC Video Streams
 
 Let's first start by creating a `components` folder and populating it with the components we'll be using. From the root directory:
 
@@ -587,7 +587,7 @@ Success! We officially have a working QR Code Scanner! 🎉🎊 Give yourself a 
 
 While we have a working prototype, it's still lacking a lot of the style that makes it "feel" like it's really scanning anything. For first time users, they wouldn't know what the app is supposed to do. Let's add some visual styling to make it clear what our app means to accomplish.
 
-# QR Scanner Styling
+## QR Scanner Styling
 
 Most QR scanners are going to put a dark filter over the screen except for a square in the middle. This is the target that the user is supposed to line up the QR code with. This sort of styling has a purpose, it's there to provide intuitive knowledge of how to use the scanner for first time users.
 
@@ -681,7 +681,7 @@ Let's take a quick preview to see how this looks.
 
 Not too shabby (and I'm not just talking about myself here).
 
-# Conclusion
+## Conclusion
 
 In this tutorial, we have created a QR Code scanner with WebAssembly and the latest in modern web technology. As a component, you'll easily be able to export this functionality to any app you'll be creating in the future.
 

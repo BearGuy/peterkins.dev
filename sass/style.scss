@@ -58,6 +58,9 @@ pre {
 code {
   color: $p3_blue_color;
   font-size: 1.1em;
+  background: #3b3d42;
+  padding: 2px 5px;
+  border-radius: 5px;
 }
 
 .header {
@@ -284,6 +287,10 @@ code {
   font-size: 1.1em;
   line-height: 1.5em;
   color: whitesmoke;
+
+  h2, h3 {
+    padding-top: 1em;
+  }
 }
 
 .blog-body a {
