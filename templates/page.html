@@ -3,6 +3,8 @@
     <head>
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <link rel="preload" href="style.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
+        <noscript><link rel="stylesheet" href="style.css"></noscript>
 
         <title>{{ page.title }}</title>
         <meta name="title" content="{{ page.title }}">
@@ -15,6 +17,15 @@
         <meta property="og:image" content="https://peterkins.dev/android-chrome-512x512.png">
         <meta property="og:url" content="https://peterkins.dev/{{ page.path }}">
 
+        <!-- Twitter Card Metadata -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@speterkins">
+        <meta name="twitter:creator" content="@speterkins">
+        <meta name="twitter:url" content="https://peterkins.dev/{{ page.path }}">
+        <meta name="twitter:title" content="{{ page.title }}">
+        <meta name="twitter:description" content="{{ page.description }}">
+        <meta name="twitter:image" content="https://peterkins.dev/android-chrome-512x512.png">
+
         <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
         <meta name="author" content="Stephen Peterkins">
 
@@ -25,8 +36,6 @@
 
         <script defer async src="https://www.googletagmanager.com/gtag/js?id=UA-121301783-2"></script>
         <script defer src="/js/ga-script.js"></script>
-
-        <link rel="stylesheet" href="/style.css">
     </head>
     <body>
       <div class="header han-purple">
