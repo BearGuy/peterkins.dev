@@ -4,7 +4,7 @@ title =  "How To Be A Blockchain Dev In 2018"
 description = "I'm positive that you've been exposed to the hype the last couple of months; it's practically unavoidable. Crypto, blockchain, decentralization, tokenization, smart contracts, distributed ledgers..."
 +++
 
-![DISTRIBUTED NETWORKS](http://d2eurtqqjrsekg.cloudfront.net/public/causeway_bay_md.jpg)
+![DISTRIBUTED NETWORKS](https://cdn.k1nz.co/public/causeway_bay_md.jpg)
 
 I'm positive that you've been exposed to the hype the last couple of months; it's practically unavoidable. Crypto, blockchain, decentralization, tokenization, smart contracts, distributed ledgers; perhaps you know what some of these words mean and others mean nothing to you. Several articles posted online are saying these technologies are changing the world as we know it. “The Web 2.0 dynasty is waning; the era of Web 3.0 is upon us.” You're told that you’d better be prepared for what's coming; after all, everyone knows that it's disrupt, or be disrupted.
 
@@ -31,7 +31,7 @@ You don't have to be an expert to step into this realm; however, it's best that 
 
 ####What's a Smart Contract?
 - [BlockGeek's Smart Contract Guide](https://blockgeeks.com/guides/smart-contracts/)
-- [Etheruem's Smart Contract Language Solidity](http://solidity.readthedocs.io/en/v0.4.24/)
+- [Etheruem's Smart Contract Language Solidity](https://solidity.readthedocs.io/en/v0.4.24/)
 - [_*Deep Dive*_: Code is Law](https://medium.com/@bytemaster/the-intent-of-code-is-law-c0e0cd318032)
 
 ####What's EOS?

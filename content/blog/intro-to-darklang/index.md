@@ -1,7 +1,7 @@
 +++
 draft = true
 date = 2020-02-14
-title = "Intro to Darklang - Why the Future is Deployless"
+title = "Intro to Darklang - A Deployless Programmnig Language"
 description = ""
 +++
 
