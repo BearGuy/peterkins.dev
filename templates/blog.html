@@ -3,7 +3,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="/style.css">
 
     <title>Blog - peterkins.dev</title>
     <meta name="title" content="Blog - peterkins.dev">
@@ -60,7 +60,7 @@
               {% for post in section.pages %}
                 <div class="blog-box">
                   <h2 class="blog-box-title">
-                    <a href="{{ post.path }}">{{ post.title }}</a>
+                    <a href="/{{ post.path }}">{{ post.title }}</a>
                   </h2>
                   <h4 class="blog-box-date">{{post.year}}/{{post.month}}/{{post.day}}</h4>
                   <p class="blog-box-description">{{ post.description | safe }}</p>
