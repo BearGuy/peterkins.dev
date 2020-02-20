@@ -108,12 +108,19 @@ button {
 }
 
 .header-right {
-  width: 12em;
-  height: 1.75em;
+  // width: 12em;
+  // height: 1.75em;
 
-  display: flex;
-  justify-self: flex-end;
-  justify-content: space-between;
+  // display: flex;
+  // justify-self: flex-end;
+  // justify-content: space-between;
+
+  height: 1.3em;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  justify-self: end;
+  align-self: center;
+  grid-gap: 2.5em;
 
   a {
     font-size: 1.3em;
@@ -130,7 +137,8 @@ button {
 }
 
 .main {
-  min-height: calc(100vh - 10em);
+  // min-height: calc(100vh - 10em);
+  min-height: calc(100vh - 12em);
 }
 
 .footer {
@@ -229,6 +237,37 @@ button {
   #about {
     width: 3em;
   }
+
+  #archive {
+    width: 3.9em;
+  }
+}
+
+/** ARCHIVE **/
+.archive-list {
+  display: grid;
+  grid-gap: 3em;
+  margin: 2em 0;
+}
+
+.archive-episode {
+  audio {
+    width: 100%;
+    height: 35px;
+  }
+
+  .archive-episode-title {
+    font-family: "Helvetica Neue";
+  }
+
+  .archive-episode-date {
+    font-family: "Helvetica Neue";
+    margin-bottom: 0.75em;
+  }
+
+  p {
+    margin: 1em 0 2em 0;
+  }
 }
 
 /** BLOG LIST **/
@@ -260,22 +299,7 @@ button {
 }
 .blog-box-date {
   font-family: "Helvetica Neue";
-  margin-top: 0.5em;
-}
-// .blog-box-description{}
-
-.blog-box-button{
-  // background: $p1_pink_color;
-  // color: black;
-  // font-size: 1em;
-  // padding: 3px;
-  // min-width: 8em;
-  // border-radius: 5px;
-  // border: unset;
-  // font-family: georgia;
-  // font-weight: bold;
-  // justify-self: end;
-  // cursor: pointer;
+  margin-bottom: 0.75em;
 }
 
 /** PAGE **/
@@ -483,5 +507,17 @@ button {
 
   .blog-list {
     grid-template-columns: 1fr;
+  }
+
+  .archive-post {
+    max-width: 93vw;
+    margin: auto;
+  }
+
+  .big-blog-divider {
+    max-width: 93vw;
+    margin: auto;
+    margin-top: 3em;
+    margin-bottom: 2em;
   }
 }

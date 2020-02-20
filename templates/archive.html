@@ -6,26 +6,26 @@
     <link rel="stylesheet" href="/style.css">
 
     <title>About - peterkins.dev</title>
-    <meta name="title" content="About - peterkins.dev">
-    <meta name="description" content="Welcome to the About section of peterkins.dev.
-    Here you can get more information about the author of the blog, Stephen Peterkins.">
+    <meta name="title" content="Archive - peterkins.dev">
+    <meta name="description" content="Welcome to the Archive section of peterkins.dev.
+    This is an audio archive of the episodes of The Peterkins Podcast">
     <meta name="image" content="https://peterkins.dev/android-chrome-512x512.png">
 
     <!-- OG metadata -->
     <meta property="og:title" content="About - peterkins.dev">
-    <meta property="og:description" content="Welcome to the About section of peterkins.dev.
-    Here you can get more information about the author of the blog, Stephen Peterkins.">
+    <meta property="og:description" content="Welcome to the Archive section of peterkins.dev.
+    This is an audio archive of the episodes of The Peterkins Podcast">
     <meta property="og:image" content="https://peterkins.dev/android-chrome-512x512.png">
-    <meta property="og:url" content="https://peterkins.dev/about">
+    <meta property="og:url" content="https://peterkins.dev/archive">
 
     <!-- Twitter Card Metadata -->
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@speterkins">
     <meta name="twitter:creator" content="@speterkins">
-    <meta name="twitter:url" content="https://peterkins.dev/about">
-    <meta name="twitter:title" content="About - peterkins.dev">
-    <meta name="twitter:description" content="Welcome to the About section of peterkins.dev.
-    Here you can get more information about the author of the blog, Stephen Peterkins.">
+    <meta name="twitter:url" content="https://peterkins.dev/archive">
+    <meta name="twitter:title" content="Archive - peterkins.dev">
+    <meta name="twitter:description" content="Welcome to the Archive section of peterkins.dev.
+    This is an audio archive of the episodes of The Peterkins Podcast">
     <meta name="twitter:image" content="https://peterkins.dev/android-chrome-512x512.png">
 
     <meta name="author" content="Stephen Peterkins">
@@ -48,15 +48,28 @@
           </h1>
         </div>
         <div class="header-right">
-          <a href="/archive">archive</a>
-          <a href="/blog">blog</a>
-          <a href="/about">about</a>
+            <a href="/archive">archive</a>
+            <a href="/blog">blog</a>
+            <a href="/about">about</a>
         </div>
     </div>
     <div class="main">
         <div class="content">
-            <h1 id="about">about</h1>
-            <p>Hi there wave 👋 My name is Stephen Peterkins, and I'm a full-stack developer.</p>
+            <h1 id="archive">archive</h1>
+            <div class="archive-list">
+              {% set section = get_section(path="archive/_index.md") %}
+              {% for episode in section.pages %}
+                <div class="archive-episode">
+                  <h3 class="archive-episode-date">{{episode.year}}/{{episode.month}}/{{episode.day}}</h4>
+                  <h2 class="archive-episode-title"">{{ episode.title }}</h2>
+                  <p>{{ episode.description | safe }}</p>
+                  <audio controls>
+                    <source src="{{episode.extra.filename}}" type="audio/mp3">
+                  </audio>
+                </div>
+              {% endfor %}
+            </div>
+
             <hr class="big-blog-divider">
             <!-- Begin Mailchimp Signup Form -->
             <div id="mc_embed_signup">
