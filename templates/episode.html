@@ -1,0 +1,124 @@
+<!DOCTYPE>
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <link rel="stylesheet" href="/style.css">
+
+        <title>{{ page.title }}</title>
+        <meta name="title" content="{{ page.title }}">
+        <meta name="description" content="{{ page.description }}">
+        <meta name="image" content="https://peterkins.dev/android-chrome-512x512.png">
+
+        <!-- OG metadata -->
+        <meta property="og:title" content="{{ page.title }}">
+        <meta property="og:description" content="{{ page.description }}">
+        <meta property="og:image" content="https://peterkins.dev/android-chrome-512x512.png">
+        <meta property="og:url" content="https://peterkins.dev/{{ page.path }}">
+
+        <!-- Twitter Card Metadata -->
+        <meta name="twitter:card" content="summary">
+        <meta name="twitter:site" content="@speterkins">
+        <meta name="twitter:creator" content="@speterkins">
+        <meta name="twitter:url" content="https://peterkins.dev/{{ page.path }}">
+        <meta name="twitter:title" content="{{ page.title }}">
+        <meta name="twitter:description" content="{{ page.description }}">
+        <meta name="twitter:image" content="https://peterkins.dev/android-chrome-512x512.png">
+
+        <meta name="author" content="Stephen Peterkins">
+
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png">
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png">
+        <link rel="manifest" href="/site.webmanifest">
+
+        <script defer async src="https://www.googletagmanager.com/gtag/js?id=UA-121301783-2"></script>
+        <script defer src="/js/ga-script.js"></script>
+    </head>
+    <body>
+      <div class="header han-purple">
+          <div class="header-logo">
+            <h1>
+              <a href="/">
+               peterkins.dev
+             </a>
+           </h1>
+          </div>
+          <div class="header-right">
+            <a href="/archive">archive</a>
+            <a href="/blog">blog</a>
+            <a href="/about">about</a>
+          </div>
+      </div>
+        <div class="main">
+          <div class="archive-content">
+            <h2 class="archive-episode-date">{{page.year}}/{{page.month}}/{{page.day}}</h4>
+            <h1 class="archive-episode-title"">{{ page.title }}</h2>
+            <p>{{ page.description | safe }}</p>
+            <audio controls>
+              <source src="{{page.extra.filename}}" type="audio/mp3">
+            </audio>
+
+            <div class="blog-body">
+              {{ page.content | safe }}
+              <hr class="big-blog-divider">
+
+              <!-- Begin Mailchimp Signup Form -->
+              <div id="mc_embed_signup">
+                <form action="https://dev.us4.list-manage.com/subscribe/post?u=1d52c5a81b9c9e15fe18627c8&amp;id=d681231940" method="post" id="mc-embedded-subscribe-form" name="mc-embedded-subscribe-form" class="validate" target="_blank" novalidate>
+                  <div id="mc_embed_signup_scroll">
+                    <label for="mce-EMAIL">Subscribe and don't miss out</label>
+                    <input type="email" value="" name="EMAIL" class="email" id="mce-EMAIL" placeholder="Email address" required>
+                    <!-- real people should not fill this in and expect good things - do not remove this or risk form bot signups-->
+                    <div style="position: absolute; left: -5000px;" aria-hidden="true"><input type="text" name="b_1d52c5a81b9c9e15fe18627c8_d681231940" tabindex="-1" value=""></div>
+                    <div class="clear"><input type="submit" value="Subscribe" name="subscribe" id="mc-embedded-subscribe" class="button"></div>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Disqus Comments -->
+              <script src="/js/SHA256.js"></script>
+              <div id="disqus_thread"></div>
+              <script>
+                (async () => {
+                  const PAGE_URL = "https://peterkins.dev/{{ page.path }}";
+                  const PAGE_IDENTIFIER = await SHA256("{{page.permalink}}");
+                  var disqus_config = function () {
+                    this.page.url = PAGE_URL;
+                    this.page.identifier = PAGE_IDENTIFIER;
+                  };
+                  (function() { // DON'T EDIT BELOW THIS LINE
+                    var d = document, s = d.createElement('script');
+                    s.src = 'https://peterkins-dev.disqus.com/embed.js';
+                    s.setAttribute('data-timestamp', +new Date());
+                    (d.head || d.body).appendChild(s);
+                  })();
+                })();
+              </script>
+              <noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+            </div>
+          </div>
+        </div>
+        <div class="footer">
+          <div class="footer-inner">
+            <p>©<span id="footer-year"></span> | Stephen Peterkins | Powered by <a href="https://getzola.org" target="_blank">Zola</a></p>
+            <div class="footer-icons">
+              <a href="https://github.com/BearGuy" target="_blank">
+                  <img src="/img/github.svg" height="25" width="25"/>
+              </a>
+              <a href="https://www.linkedin.com/in/stephen-peterkins/" target="_blank">
+                  <img src="/img/linkedin.svg" height="25" width="25"/>
+              </a>
+              <a href="https://twitter.com/speterkins" target="_blank">
+                  <img src="/img/twitter.svg" height="25" width="25"/>
+              </a>
+            </div>
+          </div>
+        </div>
+      <script>
+          document.getElementById('footer-year').innerHTML = new Date().getFullYear();
+      </script>
+  </body>
+</html>

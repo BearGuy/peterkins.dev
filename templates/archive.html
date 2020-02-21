@@ -61,7 +61,9 @@
               {% for episode in section.pages %}
                 <div class="archive-episode">
                   <h3 class="archive-episode-date">{{episode.year}}/{{episode.month}}/{{episode.day}}</h4>
-                  <h2 class="archive-episode-title"">{{ episode.title }}</h2>
+                  <a href="/{{ episode.path }}">
+                    <h2 class="archive-episode-title"">{{ episode.title }}</h2>
+                  </a>
                   <p>{{ episode.description | safe }}</p>
                   <audio controls>
                     <source src="{{episode.extra.filename}}" type="audio/mp3">

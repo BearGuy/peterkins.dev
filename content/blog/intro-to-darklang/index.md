@@ -4,7 +4,7 @@ title = "Let's Make a Discord Bot with Dark"
 description = "The explosion of tooling in hosting software has created a crisis in deploying backend applications. Not only do you have to be knowledgeable of today's current app frameworks and architecture, you also need sysadmin skills to boot. By necessity developers have needed to learn these skills, and this complexity provides a steep learning curve for new developers."
 +++
 
-# What is Dark?
+## What is Dark?
 The explosion of tooling in hosting software has created a crisis in deploying backend applications. Not only do you have to be knowledgeable of today's current app frameworks and architecture, you also need sysadmin skills to boot. By necessity developers have needed to learn these skills, and this complexity provides a steep learning curve for new developers. Developers should spend less time fiddling with configuration and more time shipping code.
 
 In comes [Dark](https://darklang.com). Dark is a new programming language with a holistic take on editing and deploying code. Currently it has a proprietary code editor, which ties very closely to the infrastructure that the code is running on. Pairing editor and infrastructure allows for a new computing paradigm that departs from the incrementalism that has consistently plagued software.

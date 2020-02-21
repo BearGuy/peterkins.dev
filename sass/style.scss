@@ -78,6 +78,11 @@ button {
   cursor: pointer;
 }
 
+audio {
+  width: 100%;
+  height: 35px;
+}
+
 .header {
   display: grid;
   grid-template-columns: 1fr 4fr;
@@ -251,23 +256,18 @@ button {
 }
 
 .archive-episode {
-  audio {
-    width: 100%;
-    height: 35px;
-  }
-
-  .archive-episode-title {
-    font-family: "Helvetica Neue";
-  }
-
-  .archive-episode-date {
-    font-family: "Helvetica Neue";
-    margin-bottom: 0.75em;
-  }
-
   p {
     margin: 1em 0 2em 0;
   }
+}
+
+.archive-episode-title {
+  font-family: "Helvetica Neue";
+}
+
+.archive-episode-date {
+  font-family: "Helvetica Neue";
+  margin-bottom: 0.75em;
 }
 
 /** BLOG LIST **/
@@ -303,7 +303,7 @@ button {
 }
 
 /** PAGE **/
-.blog-content {
+.blog-content, .archive-content {
   padding: 1em;
   margin: auto;
   max-width: 725px;
@@ -329,6 +329,10 @@ button {
     display: block;
     margin-left: auto;
     margin-right: auto;
+  }
+
+  audio {
+    margin-top: 1em;
   }
 }
 
