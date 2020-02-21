@@ -76,10 +76,10 @@
                   {% set section = get_section(path="blog/_index.md") %}
                   {% for post in section.pages %}
                     <div class="blog-box">
+                      <h3 class="blog-box-date">{{post.year}}/{{post.month}}/{{post.day}}</h3>
                       <h2 class="blog-box-title">
-                        <a href="{{ post.path }}">{{ post.title }}</a>
+                        <a href="/{{ post.path }}">{{ post.title }}</a>
                       </h2>
-                      <h4 class="blog-box-date">{{ post.date }}</h4>
                       <p class="blog-box-description">{{ post.description | safe }}</p>
                       <a href="{{ post.path }}">
                         <button class="blog-box-button">read</button>
