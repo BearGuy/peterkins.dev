@@ -55,12 +55,12 @@
           <div class="archive-content">
             <h2 class="archive-episode-date">{{page.year}}/{{page.month}}/{{page.day}}</h4>
             <h1 class="archive-episode-title"">{{ page.title }}</h2>
-            <p>{{ page.description | safe }}</p>
+            <p class="archive-episode-description">{{ page.description | safe }}</p>
             <audio controls>
               <source src="{{page.extra.filename}}" type="audio/mp3">
             </audio>
 
-            <div class="blog-body">
+            <div class="blog-body archive-body">
               {{ page.content | safe }}
               <hr class="big-blog-divider">
 

@@ -270,6 +270,12 @@ audio {
   margin-bottom: 0.75em;
 }
 
+.archive-episode-description {
+  line-height: 1.4em;
+  font-style: italic;
+  font-size: 1.1em;
+}
+
 /** BLOG LIST **/
 .blog-list {
   display: grid;
@@ -369,6 +375,10 @@ audio {
 
 .blog-body a {
   color: $p1_pink_color;
+}
+
+.archive-body {
+  margin-top: 3em;
 }
 
 #mc_embed_signup {
