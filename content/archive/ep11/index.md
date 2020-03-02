@@ -7,7 +7,7 @@ description = "Today I talk about how kindness in the long term is stronger than
 tags = ["podcast"]
 
 [extra]
-filename = "https://cdn.k1nz.co/podcasts/tpp/ep10/tpp_ep10.m4a"
+filename = "https://cdn.k1nz.co/podcasts/tpp/ep11/tpp_ep12.m4a"
 +++
 
 Hey folks,
