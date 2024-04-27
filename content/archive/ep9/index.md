@@ -3,9 +3,6 @@ date = 2020-02-28
 title = "9 - There is No Silver Bullet"
 description = "Today I talk about silver bullet thinking, and how to overcome it. Silver bullet thinking is the idea that by overcoming one single issue, it will solve every other problem in your life. In reality, we should be attempting to incrementally fix hundreds of small issues to see real change in our everyday lives."
 
-[taxonomies]
-tags = ["podcast"]
-
 [extra]
 filename = "https://cdn.k1nz.co/podcasts/tpp/ep9/tpp_ep9.m4a"
 +++

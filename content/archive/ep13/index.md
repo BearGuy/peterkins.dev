@@ -3,9 +3,6 @@ date = 2020-03-03
 title = "13 - The Right Time To Start a Business"
 description = "Today I talk about the right time to start a business. Short answer, the only right time is when you have the resources and when you're willing to make the sacrifice. Everything else is an excuse that is only stopping you from getting started."
 
-[taxonomies]
-tags = ["podcast"]
-
 [extra]
 filename = "https://cdn.k1nz.co/podcasts/tpp/ep13/tpp_ep13.m4a"
 +++

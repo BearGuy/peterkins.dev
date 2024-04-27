@@ -3,9 +3,6 @@ date = 2020-03-01
 title = "11 - Kindness Beats Cruelty Online"
 description = "Today I talk about how kindness in the long term is stronger than cruelty online. While the 'performative cruelty' of online discourse provides entertaining content, it's ultimately substancesless and its toxicity will corrode the community utilizing it. The foundation of online communities must be rooted in kindness to be sustainable and to form constructive change."
 
-[taxonomies]
-tags = ["podcast"]
-
 [extra]
 filename = "https://cdn.k1nz.co/podcasts/tpp/ep11/tpp_ep11.m4a"
 +++

@@ -3,9 +3,6 @@ date = 2020-02-29
 title = "10 - How To Stop Thinking and Start Doing"
 description = "Today I talk about how to stop thinking and start doing. There is a chasm in our minds between thinking about what we want to do, and actually doing it. That chasm is our egos protecting the image we've created of ourselves. Only by overcoming our egos will we be able to act freely, and accept the imperfections in our work and in ourselves."
 
-[taxonomies]
-tags = ["podcast"]
-
 [extra]
 filename = "https://cdn.k1nz.co/podcasts/tpp/ep10/tpp_ep10.m4a"
 +++

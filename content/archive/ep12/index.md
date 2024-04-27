@@ -3,9 +3,6 @@ date = 2020-03-02
 title = "12 - When To Quit"
 description = "Today I talk about when to give up. There's a large emphasis on persisting through challenges in our society, but there's times where it's best to just give up and move on. There's a couple of key things to consider when making this decision, and I share a few of them in today's episode."
 
-[taxonomies]
-tags = ["podcast"]
-
 [extra]
 filename = "https://cdn.k1nz.co/podcasts/tpp/ep12/tpp_ep12.m4a"
 +++
